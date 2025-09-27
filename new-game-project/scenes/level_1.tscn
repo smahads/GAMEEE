@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://bg7fwmjhpi400"]
+[gd_scene load_steps=6 format=4 uid="uid://bg7fwmjhpi400"]
 
 [ext_resource type="PackedScene" uid="uid://cuwepew4cecrw" path="res://scenes/Player.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://cap3y6xcea46n" path="res://assets/sprites/Dungeon Tile Set.png" id="2_bswci"]
@@ -142,6 +142,9 @@ texture = ExtResource("2_bswci")
 [sub_resource type="TileSet" id="TileSet_5xbjy"]
 sources/1 = SubResource("TileSetAtlasSource_rus8k")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bswci"]
+distance = -27.0
+
 [node name="level1" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_014kd")]
@@ -153,3 +156,8 @@ position = Vector2(164, -102)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAAAAQAIAAEAAAACAAAAAQAIAAEAAAADAAAAAQAJAAMAAAAFAAAAAQAIAAEAAAAEAAAAAQAIAAEAAAAGAAAAAQAIAAMAAAAHAAAAAQAJAAEAAAAIAAAAAQAJAAEAAAAJAAAAAQAIAAQAAAALAAAAAQAJAAUAAAAKAAAAAQAIAAEAAAAAAAAAAQAMAAEAAAA=")
 tile_set = SubResource("TileSet_5xbjy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_bswci")
