@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://cuwepew4cecrw"]
 
-[ext_resource type="Script" uid="uid://dg162j2aowvsb" path="res://scenes/player.gd" id="1_v6fml"]
+[ext_resource type="Script" uid="uid://dg162j2aowvsb" path="res://scripts/player.gd" id="1_v6fml"]
 [ext_resource type="Texture2D" uid="uid://d3p5sg20stcrq" path="res://assets/sprites/Knight_1/Idle.png" id="2_qu4a1"]
 [ext_resource type="Texture2D" uid="uid://coljs42k4hul3" path="res://assets/sprites/Knight_1/Attack 1.png" id="3_70d11"]
 [ext_resource type="Texture2D" uid="uid://b21vk824ypfvy" path="res://assets/sprites/Knight_1/Jump.png" id="4_cw2d6"]
@@ -202,9 +202,8 @@ texture_filter = 1
 position = Vector2(49.5, -63.749996)
 scale = Vector2(1.4140625, 1.0898438)
 sprite_frames = SubResource("SpriteFrames_rhr3r")
-animation = &"Idle"
+animation = &"attack"
 autoplay = "Idle"
-frame_progress = 0.42603886
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -25)
