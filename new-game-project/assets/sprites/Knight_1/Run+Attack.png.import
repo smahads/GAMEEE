@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpt7pyn6xvm4b"
-path="res://.godot/imported/Soldier-Shadow.png-794bb7b89f5abd0acee2c65f3fbc6847.ctex"
+uid="uid://4cfufxy8dtt3"
+path="res://.godot/imported/Run+Attack.png-a0022557a1063b936464f16e4e3362ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Soldier/Shadow sprites/Soldier-Shadow.png"
-dest_files=["res://.godot/imported/Soldier-Shadow.png-794bb7b89f5abd0acee2c65f3fbc6847.ctex"]
+source_file="res://assets/sprites/Knight_1/Run+Attack.png"
+dest_files=["res://.godot/imported/Run+Attack.png-a0022557a1063b936464f16e4e3362ef.ctex"]
 
 [params]
 

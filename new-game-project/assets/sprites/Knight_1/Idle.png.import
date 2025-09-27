@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://behpbtwxnsrvm"
-path="res://.godot/imported/Soldier-Hurt.png-3cc6713812658f52cae48a5b8dfba5a0.ctex"
+uid="uid://d3p5sg20stcrq"
+path="res://.godot/imported/Idle.png-8c9199dc5fa7eb748c1f59beafe07bcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Soldier/Soldier-Hurt.png"
-dest_files=["res://.godot/imported/Soldier-Hurt.png-3cc6713812658f52cae48a5b8dfba5a0.ctex"]
+source_file="res://assets/sprites/Knight_1/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-8c9199dc5fa7eb748c1f59beafe07bcd.ctex"]
 
 [params]
 

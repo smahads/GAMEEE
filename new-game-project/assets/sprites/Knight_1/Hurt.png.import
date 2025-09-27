@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ukhd1srejblw"
-path="res://.godot/imported/Soldier-Shadow_death.png-8606c7b5cd80fd04d1af50d3f26435a5.ctex"
+uid="uid://y04xsxiyqndq"
+path="res://.godot/imported/Hurt.png-8814a9852a70bcfedb863f7c01c0bdce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Soldier/Shadow sprites/Soldier-Shadow_death.png"
-dest_files=["res://.godot/imported/Soldier-Shadow_death.png-8606c7b5cd80fd04d1af50d3f26435a5.ctex"]
+source_file="res://assets/sprites/Knight_1/Hurt.png"
+dest_files=["res://.godot/imported/Hurt.png-8814a9852a70bcfedb863f7c01c0bdce.ctex"]
 
 [params]
 
