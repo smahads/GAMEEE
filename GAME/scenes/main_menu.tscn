@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8trrch76ny8o"]
+[gd_scene load_steps=8 format=3 uid="uid://c8trrch76ny8o"]
 
 [ext_resource type="Script" uid="uid://cw4yc4d0caytp" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://d1r2p0f4fyl2m" path="res://assets/main menu background.png" id="1_l6cm7"]
@@ -20,6 +20,11 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="SystemFont" id="SystemFont_ekxnf"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bqqt6"]
+color = Color(0.7019608, 0.8235294, 0.77254903, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -98,14 +103,17 @@ anchor_left = 0.31300002
 anchor_top = 0.351
 anchor_right = 0.702
 anchor_bottom = 0.46500003
-offset_left = 0.046966553
-offset_top = -38.72
-offset_right = -0.26202393
-offset_bottom = -38.80002
+offset_left = -11.640015
+offset_top = -75.72
+offset_right = -11.948975
+offset_bottom = -75.80002
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "<game name>"
+theme_override_colors/font_color = Color(0.51733893, 0.532599, 0.4919477, 1)
+theme_override_fonts/font = SubResource("SystemFont_ekxnf")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxLine_bqqt6")
+text = "The Cursed Kingdom"
 horizontal_alignment = 1
 vertical_alignment = 1
 
