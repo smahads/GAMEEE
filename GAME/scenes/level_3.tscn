@@ -536,7 +536,7 @@ shape = SubResource("RectangleShape2D_uwxec")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="front/StaticBody2D"]
-position = Vector2(-0.39978027, -32.199875)
+position = Vector2(2.800232, -32.199875)
 shape = SubResource("RectangleShape2D_1pn4d")
 one_way_collision = true
 
