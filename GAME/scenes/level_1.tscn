@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cuwepew4cecrw" path="res://scenes/Player.tscn" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://cap3y6xcea46n" path="res://assets/sprites/Dungeon Tile Set.png" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://xn3jt1ffrp3x" path="res://scenes/Orc_warrior.tscn" id="3_rus8k"]
-[ext_resource type="PackedScene" path="res://scenes/key.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://cn5rx3njakxue" path="res://scenes/key.tscn" id="4_5xbjy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
 texture = ExtResource("2_bswci")
@@ -410,13 +410,30 @@ theme_override_font_sizes/font_size = 16
 text = "watch out 
 for traps"
 
+[node name="Label4" type="Label" parent="Labels"]
+offset_left = 1078.0
+offset_top = 323.0
+offset_right = 1203.0
+offset_bottom = 372.0
+theme_override_font_sizes/font_size = 16
+text = "Grab the Key to 
+      move on"
+
 [node name="Label3" type="Label" parent="Labels"]
-offset_left = 827.0
-offset_top = 346.0
-offset_right = 937.0
-offset_bottom = 399.0
+offset_left = 886.0
+offset_top = 354.0
+offset_right = 996.0
+offset_bottom = 407.0
 text = "Slay the Orcs
 by pressing F"
+
+[node name="Label5" type="Label" parent="Labels"]
+offset_left = 732.0
+offset_top = 556.0
+offset_right = 842.0
+offset_bottom = 609.0
+text = "Beware  of Orcs 
+They can kill you"
 
 [node name="Key" parent="." instance=ExtResource("4_5xbjy")]
 position = Vector2(1239, 455)
