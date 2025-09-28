@@ -193,7 +193,7 @@ animations = [{
 size = Vector2(28, 59)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0v8kw"]
-radius = 100.005
+radius = 100.07997
 
 [node name="orc_warrior" type="CharacterBody2D"]
 script = ExtResource("1_0v8kw")
@@ -203,7 +203,6 @@ position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_mi4j4")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.7365926
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(100, 0)
