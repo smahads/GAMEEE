@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cap3y6xcea46n" path="res://assets/sprites/Dungeon Tile Set.png" id="1_3bmlt"]
 [ext_resource type="PackedScene" uid="uid://cuwepew4cecrw" path="res://scenes/Player.tscn" id="2_jm1iu"]
 [ext_resource type="PackedScene" uid="uid://xn3jt1ffrp3x" path="res://scenes/Orc_warrior.tscn" id="3_pbc48"]
-[ext_resource type="PackedScene" path="res://scenes/key.tscn" id="4_eqxsl"]
+[ext_resource type="PackedScene" uid="uid://cn5rx3njakxue" path="res://scenes/key.tscn" id="4_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://27056q8g2ngf" path="res://Objects/Moving_platform.tscn" id="5_b4j7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm1iu"]
@@ -371,7 +371,7 @@ size = Vector2(33.666656, 7.666664)
 size = Vector2(32.00001, 6.666668)
 
 [sub_resource type="Animation" id="Animation_wo48x"]
-length = 0.001
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -379,10 +379,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(323, 497)]
+"values": [Vector2(323, 497), Vector2(1312, 497)]
 }
 
 [sub_resource type="Animation" id="Animation_b4j7a"]
@@ -450,7 +450,7 @@ position = Vector2(323, 497)
 libraries = {
 &"": SubResource("AnimationLibrary_y0kc7")
 }
-autoplay = "Run"
+autoplay = "RESET"
 
 [node name="player" parent="." instance=ExtResource("2_jm1iu")]
 position = Vector2(38, 512)

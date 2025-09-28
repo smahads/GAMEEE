@@ -23,6 +23,7 @@ window/size/viewport_height=720
 [global_group]
 
 ground=""
+player=""
 
 [input]
 
