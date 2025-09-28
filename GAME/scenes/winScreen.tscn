@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvckh4s3ib81i"]
+
+[ext_resource type="Texture2D" uid="uid://crke26rgiw323" path="res://assets/youWin image.png" id="1_kcs6a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdrec"]
+texture = ExtResource("1_kcs6a")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 1279.0
+offset_bottom = 716.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_hdrec")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 450.0
+offset_top = 548.0
+offset_right = -648.0
+offset_bottom = -132.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="Main menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Return to Main Menu"
+
+[node name="quit" type="Button" parent="VBoxContainer/Main menu"]
+layout_mode = 0
+offset_left = 68.5
+offset_top = 43.5
+offset_right = 110.5
+offset_bottom = 74.5
+text = "Quit"
