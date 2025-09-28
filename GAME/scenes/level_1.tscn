@@ -383,7 +383,6 @@ position = Vector2(133, -223)
 
 [node name="orc_warrior" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(860, 452)
-collision_layer = 2
 
 [node name="Labels" type="Node" parent="."]
 
