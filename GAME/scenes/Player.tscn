@@ -258,7 +258,7 @@ height = 68.0
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_qu4a1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cw2d6"]
-size = Vector2(92, 44)
+size = Vector2(83, 44)
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
@@ -269,8 +269,10 @@ texture_filter = 1
 position = Vector2(1.7499986, -35)
 scale = Vector2(1.3867188, 1.0898438)
 sprite_frames = SubResource("SpriteFrames_rhr3r")
-animation = &"attack"
+animation = &"jump"
 autoplay = "Idle"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -34)
@@ -298,7 +300,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(41, -32)
+position = Vector2(36.5, -32)
 shape = SubResource("RectangleShape2D_cw2d6")
 
 [node name="AttackTimer" type="Timer" parent="."]

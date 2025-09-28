@@ -54,17 +54,27 @@ func _physics_process(delta: float) -> void:
 
 	# Movement
 	var direction := Input.get_axis("move_left", "move_right")
-
+	var initial_attack_area_x = -5
+	
+	
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
-
+	
 	if direction and not is_attacking:
 		velocity.x = direction * SPEED
 		$stairchecker.scale.x = sign(velocity.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	# FIX: Flip AttackArea based on AnimatedSprite's state
+	if animated_sprite.flip_h:
+		# If flipped (facing left), move the attack area to the opposite side (negative X)
+		attack_area.position.x = -78 - initial_attack_area_x
+	else:
+		# If not flipped (facing right), use the default position (positive X)
+		attack_area.position.x = initial_attack_area_x
 
 	# Animations
 	if not is_attacking and not is_hurt:
@@ -127,6 +137,10 @@ func _on_hurt_animation_finished() -> void:
 	if animated_sprite.animation == "hurt":
 		is_hurt = false
 
+# NEW: Function for instant lethal damage from traps
+func take_hazard_damage() -> void:
+	# Use a high value guaranteed to kill the player (since health is 2)
+	take_damage(99)
 
 # MODIFIED: Death function to stop all processes and connect the scene change
 func die() -> void:

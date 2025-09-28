@@ -3,48 +3,43 @@
 [ext_resource type="Texture2D" uid="uid://vxcufpxell1d" path="res://assets/died screen.png" id="1_6bcno"]
 [ext_resource type="Script" uid="uid://b8utdsjyexv6n" path="res://scripts/game_over.gd" id="1_qae0b"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1280.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_qae0b")
 
 [node name="DiedScreen" type="Sprite2D" parent="."]
-position = Vector2(638.50006, 357.5)
-scale = Vector2(0.8300782, 0.69433594)
+position = Vector2(641, 358)
+scale = Vector2(0.8333334, 0.703125)
 texture = ExtResource("1_6bcno")
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -112.0
-offset_top = 84.0
-offset_right = -1323.0
-offset_bottom = -613.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "You Died"
-
 [node name="Return to Menu" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 370.0
-offset_top = 490.0
-offset_right = -776.0
-offset_bottom = -187.0
+offset_left = 408.0
+offset_top = 476.0
+offset_right = 520.0
+offset_bottom = 530.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Retry"
+text = "Return to the 
+Main Menu
+"
 
 [node name="quit" type="Button" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 715.0
-offset_top = 490.0
-offset_right = -433.0
-offset_bottom = -188.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 1
+offset_left = 718.0
+offset_top = 477.0
+offset_right = 830.0
+offset_bottom = 529.0
 text = "Quit"
 
 [connection signal="pressed" from="Return to Menu" to="." method="_on_button_pressed"]
