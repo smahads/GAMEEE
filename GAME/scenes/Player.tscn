@@ -190,6 +190,7 @@ height = 68.0
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_qu4a1"]
 
 [node name="player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_v6fml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn5rx3njakxue"]
+
+[ext_resource type="Texture2D" uid="uid://cap3y6xcea46n" path="res://assets/sprites/Dungeon Tile Set.png" id="1_fttkb"]
+[ext_resource type="Script" uid="uid://dycwnd8gwbr2v" path="res://scripts/key.gd" id="1_wy8tx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brs3p"]
+atlas = ExtResource("1_fttkb")
+region = Rect2(176, 144, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcln5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brs3p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4qnb"]
+size = Vector2(42, 13.5)
+
+[node name="Key" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_wy8tx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.7683716e-07, -4.7683716e-07)
+scale = Vector2(3.1883678, 3.1883678)
+sprite_frames = SubResource("SpriteFrames_jcln5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 3.25)
+shape = SubResource("RectangleShape2D_b4qnb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
