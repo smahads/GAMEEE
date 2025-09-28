@@ -11,14 +11,20 @@ const JUMP_VELOCITY = -450.0
 var health: int = 2
 var is_attacking: bool = false
 var is_dead: bool = false
-var is_hurt: bool = false # NEW: State to manage hurt animation
+var is_hurt: bool = false 
 
 func _ready() -> void:
 	# Reset attack after animation ends
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	# Damage on specific attack frame
 	animated_sprite.frame_changed.connect(_on_frame_changed)
-	attack_area.body_entered.connect(_on_attack_area_entered)
+	attack_area.body_entered.connect(_on_attack_area_entered) # <-- This line needs the function below to exist
+
+
+# ... (at the bottom of your script, under the DAMAGE SYSTEM or separate section)
+
+func _on_attack_area_entered(body: Node) -> void:
+	print("AttackArea detected: ", body) # <-- THIS FUNCTION MUST BE DEFINED
 
 
 func _physics_process(delta: float) -> void:
@@ -44,8 +50,7 @@ func _physics_process(delta: float) -> void:
 	# Attack
 	if Input.is_action_just_pressed("attack") and not is_attacking and is_on_floor():
 		perform_attack()
-		print("Attack bodies: ", attack_area.get_overlapping_bodies())
-		return # don’t allow movement during attack
+		return
 
 	# Movement
 	var direction := Input.get_axis("move_left", "move_right")
@@ -62,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Animations
-	if not is_attacking and not is_hurt: # MODIFIED: Check is_hurt
+	if not is_attacking and not is_hurt:
 		if is_on_floor():
 			if direction == 0:
 				animated_sprite.play("Idle")
@@ -85,15 +90,12 @@ func _physics_process(delta: float) -> void:
 func perform_attack() -> void:
 	is_attacking = true
 	animated_sprite.play("attack")
-	attack_timer.start()# short cooldown
+	attack_timer.start()
 
 
 func _on_frame_changed() -> void:
-	if animated_sprite.animation == "attack" and animated_sprite.frame == 1:# adjust frame index
-		print("Attack frame: ", animated_sprite.frame)
+	if animated_sprite.animation == "attack" and animated_sprite.frame == 1: # Frame 1 check
 		for body in attack_area.get_overlapping_bodies():
-			print("Detected body on frame ", animated_sprite.frame, ": ", body.name)
-			# MODIFIED: Check for the Orc type AND confirm the method exists
 			if body is Orc and body.has_method("take_damage"):
 				body.take_damage(1)
 
@@ -111,28 +113,44 @@ func _on_attack_timer_timeout() -> void:
 # DAMAGE SYSTEM
 # ------------------------
 func take_damage(amount: int) -> void:
-	if is_dead or is_hurt: # NEW: Ignore damage if already dead or hurt
+	if is_dead or is_hurt:
 		return
 	health -= amount
 	if health > 0:
-		is_hurt = true # NEW: Set hurt state
+		is_hurt = true 
 		animated_sprite.play("hurt")
-		# NEW: Connect to a function to reset the state when the hurt animation finishes
 		animated_sprite.animation_finished.connect(_on_hurt_animation_finished, CONNECT_ONE_SHOT)
 	else:
 		die()
 
-# NEW: Function to reset the hurt state
 func _on_hurt_animation_finished() -> void:
 	if animated_sprite.animation == "hurt":
 		is_hurt = false
 
+
+# MODIFIED: Death function to stop all processes and connect the scene change
 func die() -> void:
+	if is_dead: 
+		return
 	is_dead = true
+	velocity = Vector2.ZERO # Stop movement
+	
 	animated_sprite.play("death")
-	set_physics_process(false)# stop processing movement
+	
+	# Connect the signal only once
+	if not animated_sprite.animation_finished.is_connected(_on_death_animation_finished):
+		animated_sprite.animation_finished.connect(_on_death_animation_finished, CONNECT_ONE_SHOT)
+	
+	# Stop ALL updates (physics and regular) to prevent errors during cleanup
+	set_process(false) 
+	set_physics_process(false) 
 
 
-func _on_attack_area_entered(body: Node) -> void:
-	print("AttackArea detected: ", body)
-# TEMPORARY DEBUG CODE IN Player.gd
+# MODIFIED: Scene change handler uses call_deferred for safety and the correct path
+func _on_death_animation_finished() -> void:
+	if animated_sprite.animation == "death":
+		# The correct path provided by the user
+		var game_over_scene_path = "res://scenes/GameOver.tscn" 
+		
+		# Use call_deferred to safely change the scene after the frame is done
+		get_tree().call_deferred("change_scene_to_file", game_over_scene_path)

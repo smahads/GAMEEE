@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://dau28x7bv5yhq"]
+[gd_scene load_steps=16 format=4 uid="uid://dau28x7bv5yhq"]
 
 [ext_resource type="Texture2D" uid="uid://cap3y6xcea46n" path="res://assets/sprites/Dungeon Tile Set.png" id="1_70nk6"]
 [ext_resource type="PackedScene" uid="uid://cuwepew4cecrw" path="res://scenes/Player.tscn" id="2_h23n6"]
+[ext_resource type="PackedScene" uid="uid://xn3jt1ffrp3x" path="res://scenes/Orc_warrior.tscn" id="3_1pn4d"]
+[ext_resource type="PackedScene" uid="uid://cn5rx3njakxue" path="res://scenes/key.tscn" id="4_ah8om"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h23n6"]
 texture = ExtResource("1_70nk6")
@@ -560,3 +562,15 @@ position = Vector2(49, 421)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(133, -223)
+
+[node name="orc_warrior" parent="." instance=ExtResource("3_1pn4d")]
+position = Vector2(747, 444)
+
+[node name="orc_warrior2" parent="." instance=ExtResource("3_1pn4d")]
+position = Vector2(1087, 207)
+
+[node name="orc_warrior3" parent="." instance=ExtResource("3_1pn4d")]
+position = Vector2(474, -70)
+
+[node name="Key" parent="." instance=ExtResource("4_ah8om")]
+position = Vector2(-524, 413)

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://drnrcmiwwpmh4"]
+[gd_scene load_steps=3 format=3 uid="uid://drnrcmiwwpmh4"]
 
 [ext_resource type="Texture2D" uid="uid://vxcufpxell1d" path="res://assets/died screen.png" id="1_6bcno"]
+[ext_resource type="Script" uid="uid://b8utdsjyexv6n" path="res://scripts/game_over.gd" id="1_qae0b"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_qae0b")
 
 [node name="DiedScreen" type="Sprite2D" parent="."]
 position = Vector2(638.50006, 357.5)
@@ -21,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "You Died"
 
-[node name="Button" type="Button" parent="."]
+[node name="Return to Menu" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Retry"
 
-[node name="Button2" type="Button" parent="."]
+[node name="quit" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -44,3 +46,6 @@ offset_bottom = -188.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
+
+[connection signal="pressed" from="Return to Menu" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
