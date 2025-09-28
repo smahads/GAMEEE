@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://drnrcmiwwpmh4"]
+
+[ext_resource type="Texture2D" uid="uid://vxcufpxell1d" path="res://assets/died screen.png" id="1_6bcno"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="DiedScreen" type="Sprite2D" parent="."]
+position = Vector2(638.50006, 357.5)
+scale = Vector2(0.8300782, 0.69433594)
+texture = ExtResource("1_6bcno")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = 84.0
+offset_right = -1323.0
+offset_bottom = -613.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Died"
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 490.0
+offset_right = -776.0
+offset_bottom = -187.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Retry"
+
+[node name="Button2" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 715.0
+offset_top = 490.0
+offset_right = -433.0
+offset_bottom = -188.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
