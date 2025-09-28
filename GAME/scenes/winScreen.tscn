@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvckh4s3ib81i"]
+[gd_scene load_steps=4 format=3 uid="uid://eeqxs2edvptf"]
 
+[ext_resource type="Script" uid="uid://chmd0fmb32ntx" path="res://scripts/win_screen.gd" id="1_hdrec"]
 [ext_resource type="Texture2D" uid="uid://crke26rgiw323" path="res://assets/youWin image.png" id="1_kcs6a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdrec"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hdrec")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -37,10 +39,9 @@ scale = Vector2(2, 2)
 layout_mode = 2
 text = "Return to Main Menu"
 
-[node name="quit" type="Button" parent="VBoxContainer/Main menu"]
-layout_mode = 0
-offset_left = 68.5
-offset_top = 43.5
-offset_right = 110.5
-offset_bottom = 74.5
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Main menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
