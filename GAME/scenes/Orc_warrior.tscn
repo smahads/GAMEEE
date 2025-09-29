@@ -196,7 +196,7 @@ size = Vector2(28, 59)
 radius = 100.07997
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0v8kw"]
-size = Vector2(76, 44)
+size = Vector2(70, 44)
 
 [node name="orc_warrior" type="CharacterBody2D"]
 collision_layer = 4
@@ -227,5 +227,5 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(26, 4)
+position = Vector2(23, 4)
 shape = SubResource("RectangleShape2D_0v8kw")

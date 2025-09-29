@@ -18,6 +18,7 @@ var is_dead: bool = false
 @export var right_limit := 120.0
 @export var health := 1
 @export var attack_damage := 1
+const BASE_ATTACK_OFFSET := 25.0
 
 var start_x := 0.0
 var direction := 1
@@ -51,15 +52,14 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = true
 	elif velocity.x > 0:
 		sprite.flip_h = false
-	var initial_attack_area_x = -5
-	# FIX: Flip AttackArea based on AnimatedSprite's state
-	if AnimatedSprite2D.flip_h:
-		# If flipped (facing left), move the attack area to the opposite side (negative X)
-		attack_area.position.x = -64 - initial_attack_area_x
+	
+	 # NEW: FLIP ATTACK AREA POSITION
+	if sprite.flip_h:
+		# If facing left, move the attack area to the negative offset
+		attack_area.position.x = -35-BASE_ATTACK_OFFSET
 	else:
-		# If not flipped (facing right), use the default position (positive X)
-		attack_area.position.x = initial_attack_area_x
-
+		# If facing right, use the positive offset
+		attack_area.position.x = BASE_ATTACK_OFFSET- 10
 	move_and_slide()
 
 func _patrol() -> void:
