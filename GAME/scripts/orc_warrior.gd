@@ -51,6 +51,14 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = true
 	elif velocity.x > 0:
 		sprite.flip_h = false
+	var initial_attack_area_x = -5
+	# FIX: Flip AttackArea based on AnimatedSprite's state
+	if AnimatedSprite2D.flip_h:
+		# If flipped (facing left), move the attack area to the opposite side (negative X)
+		attack_area.position.x = -64 - initial_attack_area_x
+	else:
+		# If not flipped (facing right), use the default position (positive X)
+		attack_area.position.x = initial_attack_area_x
 
 	move_and_slide()
 
