@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://eeqxs2edvptf"]
+[gd_scene load_steps=5 format=3 uid="uid://eeqxs2edvptf"]
 
 [ext_resource type="Script" uid="uid://chmd0fmb32ntx" path="res://scripts/win_screen.gd" id="1_hdrec"]
 [ext_resource type="Texture2D" uid="uid://crke26rgiw323" path="res://assets/youWin image.png" id="1_kcs6a"]
+[ext_resource type="FontFile" uid="uid://c1837rda73ip4" path="res://assets/fonts/BoldPixels.ttf" id="3_k04ep"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdrec"]
 texture = ExtResource("1_kcs6a")
@@ -37,10 +38,14 @@ scale = Vector2(2, 2)
 
 [node name="Main menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k04ep")
+theme_override_font_sizes/font_size = 19
 text = "Return to Main Menu"
 
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k04ep")
+theme_override_font_sizes/font_size = 19
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Main menu" to="." method="_on_main_menu_pressed"]

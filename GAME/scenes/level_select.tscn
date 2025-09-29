@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2ib3gnmepor"]
+
+[ext_resource type="Script" uid="uid://ocwqmd4jcww6" path="res://scripts/level_select.gd" id="1_2epne"]
+[ext_resource type="Texture2D" uid="uid://dfbmxifx40235" path="res://assets/Gemini_Generated_Image_x5c4l9x5c4l9x5c4.png" id="2_rif6e"]
+[ext_resource type="FontFile" uid="uid://c1837rda73ip4" path="res://assets/fonts/BoldPixels.ttf" id="3_chg43"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wevku"]
+texture = ExtResource("2_rif6e")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2epne"]
+bg_color = Color(0.24115619, 0.24115601, 0.24115604, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rif6e"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2epne")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 772.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wevku")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 64.0
+offset_right = 1268.0
+offset_bottom = 299.0
+theme_override_fonts/font = ExtResource("3_chg43")
+theme_override_font_sizes/font_size = 38
+text = "A curse was placed on the king due to his greed, the monsters have
+ kidnapped the king and taken him to thier dungeon, wreaking havoc in the land in that process, as the best knight of the kingdom, you are sent to save the king and restore peace to the kingdom."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="lvl1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 464.0
+offset_right = 378.0
+offset_bottom = 545.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.50020975, 0.48694175, 0.4780957, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8392157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_chg43")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2epne")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rif6e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rif6e")
+text = "Level 1"
+
+[node name="lvl2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 558.0
+offset_top = 464.0
+offset_right = -508.0
+offset_bottom = -175.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.50020975, 0.48694175, 0.4780957, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8392157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_chg43")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2epne")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rif6e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rif6e")
+text = "Level 2"
+
+[node name="lvl3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 917.0
+offset_top = 464.0
+offset_right = 1131.0
+offset_bottom = 546.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.50020975, 0.48694175, 0.4780957, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8392157, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_chg43")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2epne")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rif6e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rif6e")
+text = "Level 3"
+
+[connection signal="pressed" from="lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="lvl3" to="." method="_on_lvl_3_pressed"]
